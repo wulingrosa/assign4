@@ -19,7 +19,7 @@ int bulletNum;           //Bullet Order Number
 /*--------Put Variables Here---------*/
 
 int life = 3;
-int counter = 0;
+int Counter = 0;
 int Num = 0;
 
 void setup() {
@@ -49,8 +49,7 @@ void draw() {
   case GAME_START:
     /*---------Print Text-------------*/
     printText("GALIXIAN", 60, 240);
-    printText("press ENTER to Start", 20, 280);
-    // replace this with printText
+    printText("press ENTER to Start", 20, 280);// replace this with printText
     /*--------------------------------*/
     break;
 
@@ -93,7 +92,7 @@ void draw() {
   case GAME_LOSE:
     loseAnimate();
     /*---------Print Text-------------*/
-    printText("BOOM", 40, 240);
+    printText("BOOOM", 40, 240);
     printText("You are dead!!", 20, 280);
     /*--------------------------------*/
     break;
@@ -125,22 +124,17 @@ void keyPressed() {
 /*---------Make Alien Function-------------*/
 void alienMaker(int ox, int oy, int spacingX, int spacingY, int num, int numInCol) {
   for (int i = 0 ; i < num ; i++){
-    
     int row = int (i / numInCol);
     int col = int (i % numInCol);
-    
     int x =  ox + (spacingX * col);
     int y =  oy + (spacingY * row);
-    
     aList[i]= new Alien(x, y);
   }
 }
-
-
-
 void drawLife() {
   fill(230, 74, 96);
   text("LIFE:", 36, 455);
+  
   /*---------Draw Ship Life---------*/
   for (int i=0 ; i< life ; i++){
     ellipse(78+(i*25), 459, 15, 15);
@@ -242,8 +236,8 @@ void checkAlienDead() {
 /*---------Alien Drop Laser-----------------*/
 void alienShoot(int frame) { 
   int r = (int)random(52);
-  counter += 1;
-  if(counter > frame){
+  Counter += 1;
+  if(Counter > frame){
     if (Num < lList.length-2) {
       Num += 1;
       } else {
@@ -255,7 +249,7 @@ void alienShoot(int frame) {
           lList[Num]= new Laser(aList[r].aX , aList[r].aY );
         }
       }
-     counter = 0;
+     Counter = 0;
    }
 }
 
@@ -279,7 +273,6 @@ void checkShipHit() {
     status = GAME_LOSE;
   }
 }
-
 /*---------Check Win Lose------------------*/
 
 
