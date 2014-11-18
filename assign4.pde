@@ -84,7 +84,7 @@ void draw() {
   case GAME_WIN:
     /*---------Print Text-------------*/
     printText("WINNER", 40, 240);
-    printText("SCORE" + point , 20, 280);
+    printText("SCORE" +":"+ point , 20, 280);
     /*--------------------------------*/
     winAnimate();
     break;
