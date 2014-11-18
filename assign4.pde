@@ -215,19 +215,13 @@ void checkAlienDead() {
     Bullet bullet = bList[i];
     for (int j=0; j<aList.length-1; j++) {
       Alien alien = aList[j];
-      if (bullet != null && alien != null   
-          && !bullet.gone 
-          && !alien.die
-          && bList[i].bX + bList[i].bSize <= aList[j].aX + aList[j].aSize
-          && bList[i].bX - bList[i].bSize >= aList[j].aX - aList[j].aSize
-          && bList[i].bY + bList[i].bSize <= aList[j].aY + aList[j].aSize
-          && bList[i].bY - bList[i].bSize >= aList[j].aY - aList[j].aSize
+      if (bullet != null && alien != null   && !bullet.gone && !alien.die&& bList[i].bX + bList[i].bSize <= aList[j].aX + aList[j].aSize&& bList[i].bX - bList[i].bSize >= aList[j].aX - aList[j].aSize&& bList[i].bY + bList[i].bSize <= aList[j].aY + aList[j].aSize&& bList[i].bY - bList[i].bSize >= aList[j].aY - aList[j].aSize
       // Check Array isn't empty and bullet / alien still exist
       /*------------Hit detect-------------*/        ) {
         /*-------do something------*/
+        point+=10;  
         removeBullet(bList[i]);
         removeAlien(aList[j]);
-        point += 10;  
       }
     }
   }
