@@ -19,9 +19,8 @@ int bulletNum;           //Bullet Order Number
 /*--------Put Variables Here---------*/
 
 int Counter = 0;
-int Num = 0;
+int LaserNum = 0;
 int life = 3;
-
 
 void setup() {
 
@@ -239,15 +238,15 @@ void alienShoot(int frame) {
   int r = (int)random(52);
   Counter += 1;
   if(Counter > frame){
-    if (Num < lList.length-2) {
-      Num += 1;
+    if (LaserNum < lList.length-2) {
+      LaserNum += 1;
       } else {
-      Num = 0;
+      LaserNum = 0;
       }
       for (int i=0; i<aList.length-1; i++) {
         Alien alien = aList[i];
         if(alien!=null && !alien.die){
-          lList[Num]= new Laser(aList[r].aX , aList[r].aY );
+          lList[LaserNum]= new Laser(aList[r].aX , aList[r].aY );
         }
       }
      Counter = 0;
