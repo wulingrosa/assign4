@@ -18,9 +18,10 @@ int bulletNum;           //Bullet Order Number
 
 /*--------Put Variables Here---------*/
 
-int life = 3;
 int Counter = 0;
 int Num = 0;
+int life = 3;
+
 
 void setup() {
 
